@@ -7301,6 +7301,15 @@ static void cmd_anal_virtual_functions(RCore *core, const char* input) {
 	}
 }
 
+
+static const char *help_msg_aC[] = {
+		"Usage:", "aC", "[TODO] [...]",
+		"aCl", "", "list all classes",
+		"aC", " [classname]", "add class",
+		"aC?", "", "show this help",
+		NULL
+};
+
 static void cmd_anal_classes(RCore *core, const char *input) {
 	switch (input[0]) {
 	case 'l': // "aCl"
@@ -7324,7 +7333,7 @@ static void cmd_anal_classes(RCore *core, const char *input) {
 		break;
 	}
 	default: // "aC?"
-		eprintf ("TODO: aC?");
+		r_core_cmd_help (core, help_msg_aC);
 		break;
 	}
 }
